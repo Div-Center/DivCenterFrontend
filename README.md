@@ -123,9 +123,9 @@ For our MVP, a user will be able to look through and filter services based on th
 A user arrives at a landing page (stretch goal: login/signup). They will be able to navigate to the storefront, where they will be able to choose from a list of service categories. Once they select a category they want, they will see a list of relevant services. Pressing a service will allow the user to view more details (picture, breakdown, etc.) and add the item to their cart. Upon viewing their cart, the user will see a total $ amount, along with a mock credit card checkout option.
 
 
-![wireframe](./assets/wireframe.png)
-![wireframe2](./assets/wireframe2.png)
-![wireframe3](./assets/wireframe3.png)
+![wireframe](./assets-png/wireframe.png)
+![wireframe2](./assets-png/wireframe2.png)
+![wireframe3](./assets-png/wireframe3.png)
 
 ---
 ### Non-Functional Requirements
@@ -168,7 +168,7 @@ We are incorporating BasicAuth for security purposes. Admins will determine whic
 
 ### Schema Diagram
 
-![Schema diagram](./assets/schema.png)
+![Schema diagram](./assets-png/schema.png)
 
 ---
 ## Testing

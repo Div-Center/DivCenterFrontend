@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 // import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
+import {StyleSheet} from 'react-native';
 // === === Components === === //
 import TopHeader from "./components/header/header.js";
 import Footer from "./components/footer/footer.js";
@@ -19,7 +19,7 @@ function App() {
   return (
     <NativeRouter>
       <Provider store={store()}>
-        <SafeAreaProvider>
+        <SafeAreaProvider style={styles.app}>
           {/* <Provider store={store()}> */}
           <TopHeader />
           <Route exact path='/' component={Products} />
@@ -30,5 +30,11 @@ function App() {
     </NativeRouter>
   );
 }
+
+const styles = StyleSheet.create({
+  app: {
+    backgroundColor: '#1c1918'
+  }
+})
 
 export default App;
