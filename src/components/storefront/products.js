@@ -54,10 +54,12 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart }
                   onPress={() => addToCart(product)}>
                      <Text style={styles.buttonText}>+</Text> 
                     </TouchableOpacity>
-                <TouchableOpacity 
-                style={styles.button } component={Link} to={`/products/${product._id}`}>
+                <Link 
+                style={styles.button }  to={`/products/${product._id}`}>
+                  
                    <Text style={styles.buttonText}>?</Text> 
-                   </TouchableOpacity>
+                  
+                   </Link>
 
                 </View>
 

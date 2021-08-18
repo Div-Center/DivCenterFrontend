@@ -19,9 +19,8 @@ const styles = StyleSheet.create({
   },
   button: {
     textAlign: 'center',
-    width: 'fit-content',
     color: 'white',
-    justifyContent: 'center',
+    alignContent: 'center',
     textDecorationLine: "none",
     textDecorationColor: "white",
     borderWidth: 0.3,

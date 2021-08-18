@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { useSelector } from 'react-redux';
-import { Link, NativeRouter } from "react-router-native";
+import { Link, NativeRouter, Route } from "react-router-native";
 
 import { Text, View, StyleSheet } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
@@ -14,16 +14,16 @@ function ShoppingCart(props) {
 
   return (
     <>
-      <NativeRouter>
-        <Button
-          component={Link} to={'/'}
+     
+        <Link
+           to={'/'}
         >
-          Back to Store
-        </Button>
-      </NativeRouter>
+          <Text>Back to store</Text>
+        </Link>
+      
 
       <Text>
-        <h1>Product Detail</h1>
+        Hello
       </Text>
 
       {cart.map(rendered => {
@@ -31,10 +31,8 @@ function ShoppingCart(props) {
           <>
             <Card style={{ margin: '1em', maxWidth: '15em', padding: '2em' }}>
               <Text>
-                <p >{rendered.name}</p>
-                <p>${rendered.price}</p>
-                <p>{rendered.inStock} in stock</p>
-                <p>Category: {rendered.category}</p>
+                <Text >{rendered.name}</Text>
+                <Text>${rendered.price}</Text>
               </Text>
             </Card>
           </>
