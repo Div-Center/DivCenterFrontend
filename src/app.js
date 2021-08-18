@@ -24,7 +24,7 @@ function App() {
           <TopHeader />
           <Route exact path='/' component={Products} />
           <Route path='/cart' component={ShoppingCart} />
-          <Route path='/products/:id' component={Details} />
+          <Route path='/services/:id' component={Details} />
           <Footer />
           {/* </Provider> */}
         </SafeAreaProvider>

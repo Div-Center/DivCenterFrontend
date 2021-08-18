@@ -1,6 +1,7 @@
 // === === imports === === //
 // import dog from '../assets/dog.jpg'
 import axios from 'axios';
+import products from '../components/storefront/products';
 
 
 // === === defining product list initial state === === //
@@ -57,9 +58,11 @@ export const getProducts = (category) => {
 // === === export again again === === //
 
 export const loadProducts = () => (dispatch, getState) => {
-  return axios.get('https://api-js401.herokuapp.com/api/v1/products')
+  return axios.get('https://div-center-backend.herokuapp.com/services')
     .then(response => {
-      console.log('response.data', response.data);
+      console.log('😍 response.data', response.data);
+      console.log('👌 products', products);
+      console.log('productList', productList);
       dispatch({
         type: 'LOAD_PRODUCTS',
         payload: response.data

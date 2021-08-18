@@ -1,10 +1,11 @@
 const initialState = {
   categoryList: [
-    { _id: 10, name: 'Electronics', description: 'Category Description Goes Here' },
-    { _id: 20, name: 'Food', description: 'Category Description Goes Here' },
-    { _id: 30, name: 'Phones', description: 'Category Description Goes Here' },
-    { _id: 40, name: 'Console', description: 'Category Description Goes Here' },
-    { _id: 60, name: 'Shirt', description: 'Category Description Goes Here' }
+    { _id: 10, name: 'Accessibility', description: 'Category Description Goes Here' },
+    { _id: 20, name: 'Web Design', description: 'Category Description Goes Here' },
+    { _id: 30, name: 'Design', description: 'Category Description Goes Here' },
+    { _id: 40, name: 'Apps', description: 'Category Description Goes Here' },
+    { _id: 60, name: 'Tutoring', description: 'Category Description Goes Here' },
+    { _id: 60, name: 'Misc', description: 'Category Description Goes Here' }
   ],
 
   activatedCategory: '',

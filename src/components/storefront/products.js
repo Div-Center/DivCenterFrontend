@@ -20,12 +20,12 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart }
 
   // hello
   // === === PRODUCT IMAGES ARE COMING FROM HERE === === //
-  function productImage(description) {
-    if (!description) {
-      return 'https://picsum.photos/200/300'; // either random image generator
-    }
-    return description.split('$')[1] // or from the product description of Code Fellows API
-  }
+  // function productImage(description) {
+  //   if (!description) {
+  //     return 'https://picsum.photos/200/300'; // either random image generator
+  //   }
+  //   return description.split('$')[1] // or from the product description of Code Fellows API
+  // }
 
 
   return (
@@ -43,19 +43,19 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart }
                 width: 180, height: 300, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black' }}>
                 <Image
                   // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
-                  source={{ uri: productImage(product.description) }}
+                  source={{ uri: product.image }}
                   style={{ paddingTop: '100%', borderRadius: 50 }}
                 />
                 <Card.Title style={styles.title}> {product.name} </Card.Title>
 
-                <Text style={styles.stock}> ${product.price} - In Stock: {product.inStock} </Text>
+                <Text style={styles.stock}> ${product.price} </Text>
                   <View style={{ flexDirection:"row", alignSelf: 'center', }}>
                     <TouchableOpacity style={styles.button} 
                   onPress={() => addToCart(product)}>
                      <Text style={styles.buttonText}>+</Text> 
                     </TouchableOpacity>
                 <Link 
-                style={styles.button }  to={`/products/${product._id}`}>
+                style={styles.button }  to={`/services/${product._id}`}>
                   
                    <Text style={styles.buttonText}>?</Text> 
                   
