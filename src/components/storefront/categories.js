@@ -14,22 +14,26 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-evenly',
     textAlign: 'center',
+    backgroundColor: '#242020'
 
   },
   button: {
     textAlign: 'center',
-    maxWidth: 100,
+    width: 'moz-fit-content',
     color: 'white',
     justifyContent: 'center',
     textDecorationLine: "none",
     textDecorationColor: "white",
+    borderWidth: 0.3,
+    borderColor: 'white',
     borderRadius: 10,
+    backgroundColor: '#292222'
 
   },
   text: {
     color: 'white',
     fontSize: 20,
-    backgroundColor: '#31364a',
+    
   },
 
 });
@@ -70,7 +74,7 @@ const CategoryViewer = (props) => {
         </TouchableOpacity>
       </View>
 
-      <Text> {props.activatedDescription}</Text>
+      {/* <Text> {props.activatedDescription}</Text> */}
 
     </View>
   )

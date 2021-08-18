@@ -43,8 +43,8 @@ export default function Details(props) {
       marginBottom: 12,
     },
     buy: {
-      marginTop: '1em',
-      marginBottom: '.5em',
+      marginTop: 1,
+      marginBottom: 0.5,
       backgroundColor: 'green',
       color: 'white',
     },
@@ -101,7 +101,7 @@ export default function Details(props) {
       </Card>
 
 
-      <Button className={classes.buy} variant="contained" style={{ maxWidth: '50em', maxHeight: '3em', minWidth: '50em', minHeight: '3em' }} onClick={() => addToCart(shownItem)} > Add to Cart </Button>
+      <Button style={styles.buy} variant="contained"  onClick={() => addToCart(shownItem)} > Add to Cart </Button>
 
 
       {/* <Accordion className={classes.accordion}>

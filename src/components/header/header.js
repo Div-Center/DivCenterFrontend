@@ -21,6 +21,7 @@ function TopHeader() {
     <View>
       {/* <Text styles={styles.header}> DivCenter </Text> */}
       <Header
+        barStyle='dark-content'
         leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
         centerComponent={{ text: 'DivCenter', style: { color: '#fff', fontSize: 40 } }}
         rightComponent={{ icon: 'home', color: '#fff' }}
