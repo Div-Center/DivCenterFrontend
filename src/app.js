@@ -23,6 +23,8 @@ function App() {
           {/* <Provider store={store()}> */}
           <TopHeader />
           <Route exact path='/' component={Products} />
+          <Route path='/cart' component={ShoppingCart} />
+          <Route path='/products/:id' component={Details} />
           <Footer />
           {/* </Provider> */}
         </SafeAreaProvider>
