@@ -8,9 +8,13 @@ const styles = StyleSheet.create({
   container: {
     fontSize: 30,
     marginBottom: '5%',
+    width: '100%',
     marginTop: '3%',
     color: 'white',
-    textAlign: 'center',
+    justifyContent: 'space-evenly',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    alignSelf: 'center',
     backgroundColor: '#31364a',
   },
   footer: {
@@ -28,7 +32,8 @@ function Footer(props) {
   return (
 
     <View style={styles.container}>
-      <Button style={styles.footer} title={`🛒: ${props.cart.cart.length}`} component={Link} to={`/cart`}> </Button>
+      <Button style={styles.footer} title={`🛒: ${props.cart.cart.length}`} component={Link} to={`/cart`}/>
+      <Button style={styles.footer} title={`🏠`} />
       {/* <Text style={styles.footer}> 🛒: {props.cart.cart.length} </Text> */}
     </View >
   )

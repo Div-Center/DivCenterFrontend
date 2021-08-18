@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   },
   button: {
     textAlign: 'center',
-    width: 'moz-fit-content',
+    width: 'fit-content',
     color: 'white',
     justifyContent: 'center',
     textDecorationLine: "none",
