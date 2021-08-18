@@ -79,7 +79,7 @@ const CategoryViewer = (props) => {
         </TouchableOpacity>
       </View>
 
-      {/* <Text> {props.activatedDescription}</Text> */}
+      <Text> {props.activatedDescription}</Text>
 
     </View>
   )

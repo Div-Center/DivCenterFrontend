@@ -8,24 +8,16 @@ import LinearGradient from 'react-native-linear-gradient';
 import { inactive, active } from '../../store/categories.js';
 import { getProducts } from '../../store/products.js';
 import { addToCart } from '../../store/cart.js';
+import { detailReducer } from '../../store/productDetails.js';
 import CategoryViewer from './categories.js';
 import { loadProducts } from '../../store/products';
 
 
 
-const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart }) => {
+const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart, detailReducer }) => {
   useEffect(() => {
     loadProducts();
   }, [loadProducts]);
-
-  // hello
-  // === === PRODUCT IMAGES ARE COMING FROM HERE === === //
-  // function productImage(description) {
-  //   if (!description) {
-  //     return 'https://picsum.photos/200/300'; // either random image generator
-  //   }
-  //   return description.split('$')[1] // or from the product description of Code Fellows API
-  // }
 
 
   return (
@@ -33,14 +25,12 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart }
       <CategoryViewer />
         <View style={styles.outerView}>
       {products.productList.map((product, index) => {
-        if (product.category === activatedCategory.toLowerCase()) {
-          console.log('🎭product: ', product);
-
+        if (product.category === activatedCategory) {
           return (
             <View  item key={index}>
-
+              
               <Card containerStyle={{ 
-                width: 180, height: 300, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black' }}>
+                width: 150, height: 300, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black' }}>
                 <Image
                   // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
                   source={{ uri: product.image }}
@@ -55,7 +45,7 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart }
                      <Text style={styles.buttonText}>+</Text> 
                     </TouchableOpacity>
                 <Link 
-                style={styles.button }  to={`/services/${product._id}`}>
+                  style={styles.button } to={{pathname:`/services/${product._id}`, state: {currentProduct:product}}} >
                   
                    <Text style={styles.buttonText}>?</Text> 
                   
