@@ -1,6 +1,7 @@
 // === === imports === === //
 // import dog from '../assets/dog.jpg'
 import axios from 'axios';
+// import products from '../components/storefront/products';
 
 
 // === === defining product list initial state === === //
@@ -26,6 +27,7 @@ const initialState = {
 // === === export === === //
 export default function productReducer(state = initialState, action) {
   const { type, payload } = action;
+  // console.log('😒 payload', payload);
   switch (type) {
     case 'ACTIVE':
       const products = getProducts(payload.category);
@@ -33,7 +35,7 @@ export default function productReducer(state = initialState, action) {
 
     case 'LOAD_PRODUCTS':
       return {
-        productList: payload.results,
+        productList: payload,
       }
     case 'ADD_TO_CART':
       const deductor = state.productList.filter(item => {
@@ -50,6 +52,7 @@ export default function productReducer(state = initialState, action) {
 // === === export again === === //
 export const getProducts = (category) => {
   const products = initialState.productList;
+  // console.log('product list', initialState.productList);
   const response = products.filter(product => product.category === category);
   return response;
 }
@@ -57,9 +60,8 @@ export const getProducts = (category) => {
 // === === export again again === === //
 
 export const loadProducts = () => (dispatch, getState) => {
-  return axios.get('https://api-js401.herokuapp.com/api/v1/products')
+  return axios.get('https://div-center-backend.herokuapp.com/services')
     .then(response => {
-      console.log('response.data', response.data);
       dispatch({
         type: 'LOAD_PRODUCTS',
         payload: response.data

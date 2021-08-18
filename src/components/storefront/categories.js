@@ -42,38 +42,44 @@ const CategoryViewer = (props) => {
     <View >
 
       <View style={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={() => props.active('Electronics', 'Electronics')}>
+        <TouchableOpacity style={styles.button} onPress={() => props.active('Accessibility', 'Accessibility')}>
           <Text style={styles.text}>
-            Electronics
+          Accessibility
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => props.active('Food', 'Food')}>
+        <TouchableOpacity style={styles.button} onPress={() => props.active('Web Design', 'Web Design')}>
           <Text style={styles.text}>
-            Food
+          Web Design
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => props.active('Phones', 'Phones')}>
+        <TouchableOpacity style={styles.button} onPress={() => props.active('Design', 'Design')}>
           <Text style={styles.text}>
-            Phones
+          Design
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => props.active('Console', 'Console')}>
+        <TouchableOpacity style={styles.button} onPress={() => props.active('Apps', 'Apps')}>
           <Text style={styles.text}>
-            Consoles
+          Apps
           </Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={() => props.active('Shirts', 'Shirts')}>
+        <TouchableOpacity style={styles.button} onPress={() => props.active('Tutoring', 'Tutoring')}>
           <Text style={styles.text}>
-            Shirts
+          Tutoring
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={() => props.active('Misc', 'Misc')}>
+          <Text style={styles.text}>
+          Misc
           </Text>
         </TouchableOpacity>
       </View>
 
-      {/* <Text> {props.activatedDescription}</Text> */}
+      <Text> {props.activatedDescription}</Text>
 
     </View>
   )

@@ -8,100 +8,88 @@ import { addToCart } from '../../store/cart.js';
 // import { useParams } from 'react-router-dom';
 import { Link, NativeRouter } from "react-router-native";
 
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 
 
 export default function Details(props) {
+  // let products = useSelector(state => state.products)
+  // const { id } = useParams();
+  // console.log('🎨', products)
+  // const result = products.productList.filter(product => product._id === id);
+  // let shownItem = result[0];
+  const { currentProduct } = props.location.state;
+  console.log('props', currentProduct);
 
-  let products = useSelector(state => state.products)
-  const { id } = useParams();
-  console.log('🎨', products)
-  const result = products.productList.filter(product => product._id === id);
-  let shownItem = result[0];
+  // const styles = StyleSheet.create({
+  //   root: {
+  //     margin: '0 auto',
+  //     marginBottom: '0em',
+  //     maxWidth: '45em',
+  //     color: 'white',
+  //     background: 'linear-gradient(75deg, #000000 30%, #31364a 90%)',
+  //     border: 0,
+  //     borderRadius: 3,
+  //     // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+  //   },
+  //   title: {
+  //     fontSize: 30,
+  //     textAlign: 'center',
+  //     marginBottom: '-1em',
+  //   },
+  //   p: {
+  //     textAlign: 'center',
+  //     marginBottom: 12,
+  //   },
+  //   buy: {
+  //     marginTop: 1,
+  //     marginBottom: 0.5,
+  //     backgroundColor: 'green',
+  //     color: 'white',
+  //   },
+  //   description: {
+  //     marginTop: '1em',
+  //   },
+  //   accordion: {
+  //     color: 'white',
+  //     maxWidth: '45em',
+  //     minWidth: '45em',
+  //     padding: '-2em',
+  //     margin: '.5em',
+  //     background: 'linear-gradient(45deg, #000000 30%, #31364a 90%)',
+  //     textAlign: 'center',
+  //   },
+  //   productDetails: {
+  //     marginBottom: '0em',
+  //   }
+  // });
 
-
-  const styles = StyleSheet.create({
-    root: {
-      margin: '0 auto',
-      marginBottom: '0em',
-      maxWidth: '45em',
-      color: 'white',
-      background: 'linear-gradient(75deg, #000000 30%, #31364a 90%)',
-      border: 0,
-      borderRadius: 3,
-      // boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-    },
-    title: {
-      fontSize: 30,
-      textAlign: 'center',
-      marginBottom: '-1em',
-    },
-    p: {
-      textAlign: 'center',
-      marginBottom: 12,
-    },
-    buy: {
-      marginTop: 1,
-      marginBottom: 0.5,
-      backgroundColor: 'green',
-      color: 'white',
-    },
-    description: {
-      marginTop: '1em',
-    },
-    accordion: {
-      color: 'white',
-      maxWidth: '45em',
-      minWidth: '45em',
-      padding: '-2em',
-      margin: '.5em',
-      background: 'linear-gradient(45deg, #000000 30%, #31364a 90%)',
-      textAlign: 'center',
-    },
-    productDetails: {
-      marginBottom: '0em',
-    }
-  });
-
-
-  function productImage(description) {
-    if (!description) {
-      return 'https://picsum.photos/200/300';
-    }
-    return description.split('$')[1]
-  }
 
 
   return (
     <>
-      <NativeRouter>
-        <Button
-          component={Link} to={'/'}
-        >
-          Back to Store
-        </Button>
-      </NativeRouter>
 
-      <Text style={styles.title}>
-        {shownItem.name}
+      <Text>Hello World</Text>
+
+      <Text >
+        {currentProduct.name}
       </Text>
 
-      <Card className={classes.root}>
-        <Card
-          image={productImage(shownItem.description)}
-          style={{ maxWidth: '50em', height: 10, paddingTop: '100%' }}
+      <Card>
+        <Image
+          // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
+          source={{ uri: currentProduct.image }}
+          style={{ paddingTop: '100%', borderRadius: 50 }}
         />
 
-        <Text className={classes.p}>
-          <p>${shownItem.price}</p>
-          <p>{shownItem.inStock} in stock</p>
+        <Text >
+          <Text>${currentProduct.price}</Text>
         </Text>
       </Card>
 
 
-      <Button style={styles.buy} variant="contained"  onClick={() => addToCart(shownItem)} > Add to Cart </Button>
+      <Button variant="contained" onClick={() => addToCart(currentProduct)} > Add to Cart </Button>
 
 
       {/* <Accordion className={classes.accordion}>
