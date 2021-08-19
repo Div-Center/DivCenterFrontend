@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link, NativeRouter, Route } from "react-router-native";
 
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 
@@ -39,16 +39,11 @@ function ShoppingCart(props) {
         )
       })}
 
-      <View style={styles.button}>
-        <Text >
-        <Link
-          style={styles.button} to={{ pathname: '/checkout', state: { cart } }} >
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.text}>Checkout</Text>
-          </TouchableOpacity>
-        </Link>
-        </Text>
+      <View >
 
+        <Link style={styles.button} to={{ pathname: '/checkout' }}>
+          <Text style={styles.text}>Checkout</Text>
+        </Link>
 
       </View>
 

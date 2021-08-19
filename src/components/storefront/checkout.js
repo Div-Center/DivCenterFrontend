@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 function Checkout(props) {
   let { cart } = useSelector(state => state.cart);
-  console.log('cart state', cart);
 
   return (
     <>
