@@ -30,23 +30,23 @@ const styles = StyleSheet.create({
 
 function Footer(props) {
   return (
-   
-      <View style={styles.container}>
-          <Link style={styles.footer}  to='/cart'>
-          <Text style={styles.footer}>
-          🛒 ({props.cart.cart.length})
-            </Text>
-          </Link>
-          <Link style={styles.footer}  to='/'>
-          <Text style={styles.footer}>
-            🏠
-          </Text>
-          </Link>
-        
-        {/* <Text style={styles.footer}> 🛒: {props.cart.cart.length} </Text> */}
-      </View >
 
-  ) 
+    <View style={styles.container}>
+      <Link style={styles.footer} to='/cart'>
+        <Text style={styles.footer}>
+          🛒 ({props.cart.cart.length})
+        </Text>
+      </Link>
+      <Link style={styles.footer} to='/'>
+        <Text style={styles.footer}>
+          🏠
+        </Text>
+      </Link>
+
+      {/* <Text style={styles.footer}> 🛒: {props.cart.cart.length} </Text> */}
+    </View >
+
+  )
 };
 
 
