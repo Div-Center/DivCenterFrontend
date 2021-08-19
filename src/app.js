@@ -13,6 +13,7 @@ import store from './store/index.js';
 // import SimpleCart from './components/cart/simplecart';
 import Details from './components/product-details/details';
 import ShoppingCart from './components/cart/shopping-cart';
+import Checkout from './components/storefront/checkout.js';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/' component={Products} />
           <Route path='/cart' component={ShoppingCart} />
           <Route path='/services/:id' component={Details} />
+          <Route path='/checkout' component={Checkout} />
           <Footer />
           {/* </Provider> */}
         </SafeAreaProvider>
