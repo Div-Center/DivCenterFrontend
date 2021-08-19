@@ -14,13 +14,13 @@ function ShoppingCart(props) {
 
   return (
     <>
-     
-        <Link
-           to={'/'}
-        >
-          <Text>Back to store</Text>
-        </Link>
-      
+
+      <Link
+        to={'/'}
+      >
+        <Text>Back to store</Text>
+      </Link>
+
 
       <Text>
         Hello
@@ -39,10 +39,37 @@ function ShoppingCart(props) {
         )
       })}
 
+      <View >
+
+        <Link style={styles.button} to={{ pathname: '/checkout' }}>
+          <Text style={styles.text}>Checkout</Text>
+        </Link>
+
+      </View>
+
 
     </>
   )
 }
+
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 30,
+    color: 'white',
+  },
+  button: {
+    borderRadius: 25,
+    borderColor: '#ffffff',
+    borderWidth: 0.3,
+    backgroundColor: 'green',
+    opacity: 100,
+    width: '80%',
+    height: 50,
+    alignItems: 'center',
+    padding: 10,
+    margin: 40,
+  },
+})
 
 const mapStateToProps = (state) => {
   return {
