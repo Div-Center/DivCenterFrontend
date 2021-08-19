@@ -1,35 +1,45 @@
 import React from 'react';
 // import { connect } from 'react-redux';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, SafeAreaView } from 'react-native';
 import { Header } from 'react-native-elements';
 
 
 
 const styles = StyleSheet.create({
-  header: {
-    // fontSize: 40,
+  container: {
     // marginTop: '10%',
-    // color: 'black',
-    // textAlign: 'center',
+    color: 'white',
+    textAlign: 'center',
     backgroundColor: '#31364a',
-
+    // borderWidth: 5,
+    // borderColor: 'black',
   },
+  text: {
+    color: 'white',
+    marginBottom: 20,
+    fontSize: 30,
+    textAlign: 'center',
+  }
 });
 
 
 function TopHeader() {
 
   return (
-    <View style={styles.header}>
+
+    <SafeAreaView style={styles.container}>
       {/* <Text styles={styles.header}> DivCenter </Text> */}
-      <Header
+      {/* <Header
         barStyle='light-content'
-        containerStyle={{ backgroundColor: '#31364a', }}
+        containerStyle={{
+          backgroundColor: '#31364a', marginBottom: 10, borderWidth: 5,
+        }}
         // leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
         centerComponent={{ text: 'DivCenter', style: { color: '#fff', fontSize: 40 } }}
       // rightComponent={{ icon: 'home', color: '#fff' }}
-      />
-    </View >
+      /> */}
+      <Text style={styles.text}> DivCenter </Text>
+    </SafeAreaView >
   )
 }
 
