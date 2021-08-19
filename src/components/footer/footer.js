@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Button } from 'react-native';
+import { Text, View, StyleSheet, Button, SafeAreaView } from 'react-native';
 import { Link } from "react-router-native";
 import { connect } from 'react-redux';
 import { NativeRouter, Route } from "react-router-native";
@@ -7,8 +7,7 @@ import { NativeRouter, Route } from "react-router-native";
 const styles = StyleSheet.create({
   container: {
     fontSize: 30,
-    position: 'absolute',
-    bottom: 0,
+
     width: '100%',
     color: 'white',
     justifyContent: 'space-evenly',
@@ -31,7 +30,7 @@ const styles = StyleSheet.create({
 function Footer(props) {
   return (
 
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Link style={styles.footer} to='/cart'>
         <Text style={styles.footer}>
           🛒 ({props.cart.cart.length})
@@ -44,7 +43,7 @@ function Footer(props) {
       </Link>
 
       {/* <Text style={styles.footer}> 🛒: {props.cart.cart.length} </Text> */}
-    </View >
+    </SafeAreaView >
 
   )
 };

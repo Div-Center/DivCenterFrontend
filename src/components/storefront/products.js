@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link, NativeRouter } from "react-router-native";
 
-import { Text, ScrollView, View, Image, StyleSheet,TouchableOpacity, FlatList, } from 'react-native';
+import { Text, ScrollView, View, Image, StyleSheet, TouchableOpacity, FlatList, } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
 import LinearGradient from 'react-native-linear-gradient';
 import { inactive, active } from '../../store/categories.js';
@@ -23,47 +23,48 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart, 
   return (
     <ScrollView >
       <CategoryViewer />
-        <View style={styles.outerView}>
-      {products.productList.map((product, index) => {
-        if (product.category === activatedCategory) {
-          return (
-            <View  item key={index}>
-              
-              <Card containerStyle={{ 
-                width: 150, height: 300, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black' }}>
-                <Image
-                  // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
-                  source={{ uri: product.image }}
-                  style={{ paddingTop: '100%', borderRadius: 50 }}
-                />
-                <Card.Title style={styles.title}> {product.name} </Card.Title>
+      <View style={styles.outerView}>
+        {products.productList.map((product, index) => {
+          if (product.category === activatedCategory) {
+            return (
+              <View item key={index}>
 
-                <Text style={styles.stock}> ${product.price} </Text>
-                  <View style={{ flexDirection:"row", alignSelf: 'center', }}>
-                    <TouchableOpacity style={styles.button} 
-                  onPress={() => addToCart(product)}>
-                     <Text style={styles.buttonText}>+</Text> 
+                <Card containerStyle={{
+                  width: 150, height: 300, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black'
+                }}>
+                  <Image
+                    // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
+                    source={{ uri: product.image }}
+                    style={{ paddingTop: '100%', borderRadius: 50 }}
+                  />
+                  <Card.Title style={styles.title}> {product.name} </Card.Title>
+
+                  <Text style={styles.stock}> ${product.price} </Text>
+                  <View style={{ flexDirection: "row", alignSelf: 'center', }}>
+                    <TouchableOpacity style={styles.button}
+                      onPress={() => addToCart(product)}>
+                      <Text style={styles.buttonText}>+</Text>
                     </TouchableOpacity>
-                <Link 
-                  style={styles.button } to={{pathname:`/services/${product._id}`, state: {currentProduct:product}}} >
-                  
-                   <Text style={styles.buttonText}>?</Text> 
-                  
-                   </Link>
+                    <Link
+                      style={styles.button} to={{ pathname: `/services/${product._id}`, state: { currentProduct: product } }} >
 
-                </View>
+                      <Text style={styles.buttonText}>?</Text>
+
+                    </Link>
+
+                  </View>
 
 
-              </Card>
+                </Card>
 
-            </View>
-          )
+              </View>
+            )
 
-        } else {
-          return null;
-        }
+          } else {
+            return null;
+          }
 
-      })}
+        })}
       </View>
     </ScrollView>
   )
@@ -114,9 +115,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     backgroundColor: '#262222',
-    
-    
-    
+
+
+
   }
 })
 
