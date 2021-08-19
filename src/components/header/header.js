@@ -5,26 +5,29 @@ import { Header } from 'react-native-elements';
 
 
 
-// const styles = StyleSheet.create({
-//   header: {
-//     fontSize: 40,
-//     marginTop: '10%',
-//     color: 'black',
-//     textAlign: 'center',
-//   },
-// });
+const styles = StyleSheet.create({
+  header: {
+    // fontSize: 40,
+    // marginTop: '10%',
+    // color: 'black',
+    // textAlign: 'center',
+    backgroundColor: '#31364a',
+
+  },
+});
 
 
 function TopHeader() {
 
   return (
-    <View>
+    <View style={styles.header}>
       {/* <Text styles={styles.header}> DivCenter </Text> */}
       <Header
-        barStyle='dark-content'
-        leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
+        barStyle='light-content'
+        containerStyle={{ backgroundColor: '#31364a', }}
+        // leftComponent={{ icon: 'menu', color: '#fff', iconStyle: { color: '#fff' } }}
         centerComponent={{ text: 'DivCenter', style: { color: '#fff', fontSize: 40 } }}
-        rightComponent={{ icon: 'home', color: '#fff' }}
+      // rightComponent={{ icon: 'home', color: '#fff' }}
       />
     </View >
   )
