@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
     fontSize: 20,
-    
+
   },
 
 });
@@ -44,42 +44,42 @@ const CategoryViewer = (props) => {
       <View style={styles.container}>
         <TouchableOpacity style={styles.button} onPress={() => props.active('Accessibility', 'Accessibility')}>
           <Text style={styles.text}>
-          Accessibility
+            Accessibility
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => props.active('Web Design', 'Web Design')}>
           <Text style={styles.text}>
-          Web Design
+            Web Design
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => props.active('Design', 'Design')}>
           <Text style={styles.text}>
-          Design
+            Design
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => props.active('Apps', 'Apps')}>
           <Text style={styles.text}>
-          Apps
+            Apps
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => props.active('Tutoring', 'Tutoring')}>
           <Text style={styles.text}>
-          Tutoring
+            Tutoring
           </Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button} onPress={() => props.active('Misc', 'Misc')}>
           <Text style={styles.text}>
-          Misc
+            Misc
           </Text>
         </TouchableOpacity>
       </View>
 
-      <Text> {props.activatedDescription}</Text>
+      <Text style={{ backgroundColor: 'red', fontSize: 36, alignContent: 'center', color: 'white', }}> {props.activatedDescription}</Text>
 
     </View>
   )

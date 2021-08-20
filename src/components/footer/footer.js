@@ -7,7 +7,8 @@ import { NativeRouter, Route } from "react-router-native";
 const styles = StyleSheet.create({
   container: {
     fontSize: 30,
-
+    position: 'absolute',
+    bottom: 0,
     width: '100%',
     color: 'white',
     justifyContent: 'space-evenly',
