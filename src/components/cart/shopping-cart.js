@@ -18,13 +18,8 @@ function ShoppingCart(props) {
       <Link
         to={'/'}
       >
-        <Text>Back to store</Text>
+        <Text style={{ color: 'white', fontSize: 20, backgroundColor: 'red' }}>Back to store</Text>
       </Link>
-
-
-      <Text>
-        Hello
-      </Text>
 
       {cart.map(rendered => {
         return (

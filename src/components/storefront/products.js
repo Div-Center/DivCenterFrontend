@@ -11,6 +11,7 @@ import { addToCart } from '../../store/cart.js';
 import { detailReducer } from '../../store/productDetails.js';
 import CategoryViewer from './categories.js';
 import { loadProducts } from '../../store/products';
+import { render } from 'react-dom';
 
 
 
@@ -19,50 +20,50 @@ const ProductsViewer = ({ loadProducts, products, activatedCategory, addToCart, 
     loadProducts();
   }, [loadProducts]);
 
+  const renderProducts = (productList, isCatActivated) => {
+    if (isCatActivated) { return productList.filter(product => product.category === activatedCategory) }
+    else { return productList }
+  }
 
   return (
     <ScrollView >
       <CategoryViewer />
       <View style={styles.outerView}>
-        {products.productList.map((product, index) => {
-          if (product.category === activatedCategory) {
-            return (
-              <View item key={index}>
+        {renderProducts(products.productList, activatedCategory).map((product, index) => {
+          return (
+            <View style={{ backgroundColor: 'red', alignItems: 'center' }} item key={index}>
 
-                <Card containerStyle={{
-                  width: 150, height: 300, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black'
-                }}>
-                  <Image
-                    // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
-                    source={{ uri: product.image }}
-                    style={{ paddingTop: '100%', borderRadius: 50 }}
-                  />
-                  <Card.Title style={styles.title}> {product.name} </Card.Title>
+              <Card containerStyle={{
+                width: 300, height: 400, backgroundColor: '#262423', borderRadius: 25, borderWidth: 0, shadowRadius: 25, shadowColor: 'black', alignContent: 'center'
+              }}>
+                <Image
+                  // source={{ uri: 'https://pbs.twimg.com/profile_images/486929358120964097/gNLINY67_400x400.png' }}
+                  source={{ uri: product.image }}
+                  style={{ paddingTop: '100%', borderRadius: 50 }}
+                />
+                <Card.Title style={styles.title}> {product.name} </Card.Title>
 
-                  <Text style={styles.stock}> ${product.price} </Text>
-                  <View style={{ flexDirection: "row", alignSelf: 'center', }}>
-                    <TouchableOpacity style={styles.button}
-                      onPress={() => addToCart(product)}>
-                      <Text style={styles.buttonText}>+</Text>
-                    </TouchableOpacity>
-                    <Link
-                      style={styles.button} to={{ pathname: `/services/${product._id}`, state: { currentProduct: product } }} >
+                <Text style={styles.stock}> ${product.price} </Text>
+                <View style={{ flexDirection: "row", alignSelf: 'center', }}>
+                  <TouchableOpacity style={styles.button}
+                    onPress={() => addToCart(product)}>
+                    <Text style={styles.buttonText}>+</Text>
+                  </TouchableOpacity>
+                  <Link
+                    style={styles.button} to={{ pathname: `/services/${product._id}`, state: { currentProduct: product } }} >
 
-                      <Text style={styles.buttonText}>?</Text>
+                    <Text style={styles.buttonText}>?</Text>
 
-                    </Link>
+                  </Link>
 
-                  </View>
+                </View>
 
 
-                </Card>
+              </Card>
 
-              </View>
-            )
+            </View>
+          )
 
-          } else {
-            return null;
-          }
 
         })}
       </View>
@@ -115,6 +116,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     backgroundColor: '#262222',
+    justifyContent: 'center'
 
 
 
