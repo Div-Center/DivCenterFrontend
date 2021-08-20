@@ -79,7 +79,7 @@ const CategoryViewer = (props) => {
         </TouchableOpacity>
       </View>
 
-      <Text style={{ backgroundColor: 'red', fontSize: 36, alignContent: 'center', color: 'white', }}> {props.activatedDescription}</Text>
+      <Text style={{ backgroundColor: '#292222', fontSize: 36, alignContent: 'center', color: 'white', }}> {props.activatedDescription}</Text>
 
     </View>
   )

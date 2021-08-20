@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 // import 'react-native-gesture-handler';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 // === === Components === === //
 import TopHeader from "./components/header/header.js";
 import Footer from "./components/footer/footer.js";
@@ -37,7 +37,7 @@ function App() {
 
 const styles = StyleSheet.create({
   app: {
-    backgroundColor: '#1c1918'
+    backgroundColor: '#292222'
   }
 })
 
